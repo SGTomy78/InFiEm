@@ -1,0 +1,269 @@
+/* Variables de color */
+:root {
+  --beige-claro: #f4ece1;
+  --beige-suave: #e9e3d0;
+  --gris-oscuro-cálido: #4a453f;
+  --gris-más-oscuro: #3c3a36;
+  --amarillo-mostaza: #fce198;
+  --amarillo-mostaza-oscuro: #ddb83d;
+  --marron-rojizo: #a64727;
+  --naranja-quemado: #c35b35;
+}
+
+/* Fuente Comic Sans y estilos base */
+body {
+  margin: 0;
+  background: var(--beige-claro);
+  color: var(--gris-oscuro-cálido);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header con imagen de fondo y sombra */
+header {
+    
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--violeta-claro);
+  color: #000000;
+  text-shadow: 0 0 5px var(--rosa-claro), 0 0 10px var(--violeta-claro);
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Overlay semitransparente para mejorar lectura */
+.header-overlay {
+  
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  justify-content: center;
+  background: var(--amarillo-mostaza);
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: inherit; /* usa el color de body */
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    border-color 0.3s ease;
+  font-family: inherit;
+}
+
+nav button:hover,
+nav button:focus-visible {
+  background-color: var(--amarillo-mostaza-oscuro);
+  color: var(--gris-más-oscuro);
+  outline: none;
+}
+
+nav button.active {
+  border-bottom-color: var(--marron-rojizo);
+  color: var(--marron-rojizo);
+  background-color: var(--crema-suave);
+}
+
+/* Main content */
+main {
+  flex-grow: 1;
+  padding: 1.5rem 1rem;
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+  background: var(--beige-suave);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+}
+
+h2 {
+  color: var(--marron-rojizo);
+  margin-top: 0;
+}
+
+p {
+  color: inherit;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Responsive móvil */
+@media (max-width: 600px) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav button {
+    padding: 0.85rem 1rem;
+    font-size: 1.15rem;
+    border-bottom: none;
+    border-left: 5px solid transparent;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  nav button.active {
+    border-left-color: var(--marron-rojizo);
+    background-color: var(--crema-suave);
+    border-bottom: none;
+  }
+}
+
+/* Botón enviar */
+#sendButton {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--marron-rojizo);
+  border: none;
+  color: var(--crema-suave);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.05rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(166, 71, 39, 0.6);
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: inline-block;
+}
+
+#sendButton:hover,
+#sendButton:focus-visible {
+  background-color: var(--naranja-quemado);
+  outline: none;
+}
+
+/* Videos centrados y responsive */
+video {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* Estilo general para los fieldset */
+form fieldset {
+  border: 2px solid #a64727;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  background-color: #f9f5ef;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Estilo para leyendas y preguntas */
+form legend {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #a64727;
+  margin-bottom: 0.5rem;
+}
+
+form p {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #4a453f;
+}
+
+/* Hover y foco visual */
+form button[type="button"]:hover,
+form button[type="button"]:focus {
+  background-color: #fce198;
+  border-color: #ddb83d;
+  outline: none;
+}
+
+/* Botón de enviar */
+#sendButton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #a64727;
+  border: none;
+  border-radius: 6px;
+  color: #fdeacd;
+  font-weight: bold;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 600px) {
+  form button[type="button"] {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  #sendButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#sendButton:hover {
+  background-color: #c35b35;
+}
+.comic-neue-light {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.comic-neue-regular {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.comic-neue-light-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.comic-neue-regular-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.comic-neue-bold-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: italic;
+}
